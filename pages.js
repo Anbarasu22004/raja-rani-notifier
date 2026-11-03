@@ -1,6 +1,6 @@
 // Public pages for the Play Store listing: privacy policy and terms.
 // Change CONTACT to the email you use in Play Console.
-const CONTACT = 'YOUR-EMAIL@example.com';
+const CONTACT = 'anbarasumr4@gmail.com';
 const UPDATED = '3 November 2026';
 
 const shell = (title, body) => `<!doctype html>

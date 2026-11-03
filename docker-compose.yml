@@ -1,0 +1,11 @@
+services:
+  raja-rani-notifier:
+    build: .
+    container_name: raja-rani-notifier
+    restart: unless-stopped
+    volumes:
+      - ./service-account.json:/app/service-account.json:ro
+    logging:
+      options:
+        max-size: "5m"
+        max-file: "2"

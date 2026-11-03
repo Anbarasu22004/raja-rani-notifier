@@ -1,0 +1,16 @@
+{
+  "name": "raja-rani-notifier",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sends Raja Rani invite and rematch push notifications via Firebase Cloud Messaging.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.10.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

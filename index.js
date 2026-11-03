@@ -96,9 +96,16 @@ listen();
 
 // Tiny health page. Render needs a web port; a pinger hitting it keeps the
 // free service awake.
+const pages = require('./pages');
 const port = process.env.PORT || 8080;
 http
   .createServer((req, res) => {
+    const path = (req.url || '/').split('?')[0].replace(/\/+$/, '');
+    if (path === '/privacy' || path === '/terms') {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end(path === '/privacy' ? pages.privacy : pages.terms);
+      return;
+    }
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({ ok: true, sent, lastEvent, uptime: Math.round(process.uptime()) }));
   })
